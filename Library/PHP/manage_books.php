@@ -7,16 +7,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     exit();
 }
 
-// Fetch all books
 $books = $conn->query("SELECT * FROM books");
 
-// Handle book deletion
 if (isset($_GET['delete_id'])) {
     $conn->query("DELETE FROM books WHERE id='" . $_GET['delete_id'] . "'");
     echo "<script>alert('Book deleted successfully!'); window.location.href='manage_books.php';</script>";
 }
 
-// Handle book update
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $book_id = $_POST['book_id'];
     $title = $conn->real_escape_string($_POST['title']);

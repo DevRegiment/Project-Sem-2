@@ -1,6 +1,6 @@
 <?php
 session_start();
-session_destroy(); // Destroy all sessions
+session_destroy();
 
 header("Location: ../index.html");
 

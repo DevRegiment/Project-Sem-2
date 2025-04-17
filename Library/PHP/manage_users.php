@@ -6,17 +6,13 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     header("Location: login.html");
     exit();
 }
-
-// Fetch all users
 $users = $conn->query("SELECT * FROM users WHERE role != 'admin'");
 
-// Handle user deletion
 if (isset($_GET['delete_id'])) {
     $conn->query("DELETE FROM users WHERE id='" . $_GET['delete_id'] . "'");
     echo "<script>alert('User deleted successfully!'); window.location.href='manage_users.php';</script>";
 }
 
-// Handle user update
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user_id = $_POST['user_id'];
     $name = $conn->real_escape_string($_POST['name']);

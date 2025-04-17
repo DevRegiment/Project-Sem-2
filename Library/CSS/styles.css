@@ -233,15 +233,15 @@ nav form button {
 }
 /* Tables */
 .table-container {
-  overflow: hidden; /* Clips the corners correctly */
+  overflow: hidden;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
 table {
   width: 100%;
-  border-collapse: separate; /* Change from 'collapse' to 'separate' */
-  border-spacing: 0; /* Removes gaps between borders */
+  border-collapse: separate;
+  border-spacing: 0;
   background-color: white;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }

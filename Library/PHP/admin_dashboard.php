@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-// Ensure only admins can access this page
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
-    header("Location: login.html"); // Redirect unauthorized users
+    header("Location: login.html");
     exit();
 }
 ?>
